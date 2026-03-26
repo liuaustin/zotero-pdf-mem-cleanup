@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Zotero PDF Memory Cleanup",
+  "version": "1.0.0",
+  "description": "Fixes PDF memory leak by explicitly destroying pdf.js resources when closing reader tabs.",
+  "author": "liujianyi",
+  "applications": {
+    "zotero": {
+      "id": "pdf-mem-cleanup@claudecode",
+      "update_url": "https://raw.githubusercontent.com/anthropics/placeholder/main/update.json",
+      "strict_min_version": "8.0.0",
+      "strict_max_version": "8.*"
+    }
+  }
+}
