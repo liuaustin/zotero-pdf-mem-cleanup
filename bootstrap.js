@@ -59,11 +59,6 @@ function startup(data, reason) {
           this._cleanupView(internalReader._secondaryView, 'secondary');
         }
 
-        internalReader._primaryView = null;
-        internalReader._secondaryView = null;
-        reader._internalReader = null;
-        reader._iframeWindow = null;
-
         log(`Cleaned up reader for item ${reader.itemID}`);
       }
       catch (e) {
@@ -89,12 +84,6 @@ function startup(data, reason) {
               pdfApp.cleanup();
               log(`${label} view: PDFViewerApplication.cleanup() called`);
             }
-            if (typeof pdfApp.close === 'function') {
-              pdfApp.close().catch(function(e) {
-                log(`${label} view: close() error (non-fatal): ${e.message}`);
-              });
-              log(`${label} view: PDFViewerApplication.close() called`);
-            }
           }
           catch (e) {
             log(`${label} view: PDFViewerApplication cleanup error: ${e.message}`);
@@ -116,17 +105,6 @@ function startup(data, reason) {
         catch (e) {
           log(`${label} view: canvas cleanup error: ${e.message}`);
         }
-
-        if (view._overlayPopupDelayer) {
-          try {
-            view._overlayPopupDelayer.close(function() {});
-          }
-          catch (_e) { /* ignore */ }
-          view._overlayPopupDelayer = null;
-        }
-
-        view._iframeWindow = null;
-        view._iframe = null;
 
         log(`${label} view: cleanup complete`);
       }

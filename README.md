@@ -17,7 +17,7 @@ Zotero's built-in PDF reader leaks memory. When you close a PDF tab, the `Reader
 | Memory after closing PDF | 699 MB (never released) | 399 MB → drops to 34–47 MB within 25s |
 | Memory reclamation | None | Full recovery to baseline |
 
-*Tested on Zotero 8.0.4, macOS*
+*Tested on Zotero 8.0.4 and Zotero 9, macOS*
 
 ## How It Works
 
@@ -48,7 +48,7 @@ This creates `zotero-pdf-mem-cleanup.xpi` in the project root.
 
 ## Compatibility
 
-- Zotero 8.0.0+
+- Zotero 8.0.0+ (including Zotero 9)
 - All platforms (macOS, Windows, Linux)
 
 ## License

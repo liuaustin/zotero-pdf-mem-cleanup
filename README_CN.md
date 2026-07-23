@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-一个 Zotero 8 插件，修复 PDF 阅读器的内存泄漏问题——关闭 PDF 标签页后自动回收内存。
+一个 Zotero 8/9 插件，修复 PDF 阅读器的内存泄漏问题——关闭 PDF 标签页后自动回收内存。
 
 ## 问题背景
 
@@ -16,7 +16,7 @@ Zotero 内置的 PDF 阅读器存在内存泄漏。关闭 PDF 标签页时，`Re
 | 关闭 PDF 后内存 | 699 MB（持续不释放） | 399 MB → 25 秒后回落到 34–47 MB |
 | 内存回收 | 不回收 | 完全回收到基线水平 |
 
-*测试环境：Zotero 8.0.4，macOS*
+*测试环境：Zotero 8.0.4 与 Zotero 9，macOS*
 
 ## 工作原理
 
@@ -47,7 +47,7 @@ cd zotero-pdf-mem-cleanup
 
 ## 兼容性
 
-- Zotero 8.0.0+
+- Zotero 8.0.0+（含 Zotero 9）
 - 全平台（macOS、Windows、Linux）
 
 ## 许可证
